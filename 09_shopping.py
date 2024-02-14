@@ -33,6 +33,19 @@ sweets = {
         {'shop': 'название магазина', 'price': 99.99},
         # TODO тут с клавиатуры введите магазины и цены (можно копипастить ;)
     ],
+
     # TODO тут с клавиатуры введите другую сладость и далее словарь магазинов
 }
+for key in shops.keys():
+    for value in shops[key]:
+        if value not in sweets.keys():
+            sweets[value["name"]] = []
+        sweets[prod["name"]].append({"shop":key,"price":prod["price"]})
+print(sweets)
 # Указать надо только по 2 магазина с минимальными ценами
+for key in sweets.keys():
+    maxs=max([sweets[key][x]["price"] for x in range(len(sweets[key]))])
+    for x in sweets[key]:
+        if x["price"]==maxs:
+            sweets[key].remove(x)
+print(sweets)
