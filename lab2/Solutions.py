@@ -1,5 +1,5 @@
 from itertools import product
-import gnup
+
 # Первое задание
 letters = "ABCDE"
 count = 0
