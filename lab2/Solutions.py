@@ -22,10 +22,9 @@ def smallest_prime_factors(n):
 def calculate_M(N):
     spf = smallest_prime_factors(N)
     factors = sorted(set(spf[N] for _ in range(5)))
-    return factors if len(factors) == 5 else [0]
+    return factors
 
 results = [(N, calculate_M(N)) for N in range(200000002, 200000002 + 5)]
 
 for N, M_N in results:
     print(f"N = {N}, M(N) = {M_N}")
-
