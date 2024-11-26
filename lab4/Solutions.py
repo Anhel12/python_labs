@@ -15,7 +15,6 @@ result = outer(100)
 print(result(-40))
 print(result(20))
 
-
 # Второе задание
 import sys
 import io

@@ -40,7 +40,7 @@ for key in shops.keys():
     for value in shops[key]:
         if value not in sweets.keys():
             sweets[value["name"]] = []
-        sweets[prod["name"]].append({"shop":key,"price":prod["price"]})
+        sweets[shops["name"]].append({"shop":key,"price":shops["price"]})
 print(sweets)
 # Указать надо только по 2 магазина с минимальными ценами
 for key in sweets.keys():
