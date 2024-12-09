@@ -11,13 +11,13 @@ def create_n_dim_array_iterative(n, size):
     return array
 
 # Второе задание
-def calculate_recursive(k, x, y_prev=1, b_prev=None):
-    if b_prev is None:
-        b_prev = 1 / (2 * x)
+def calculate_recursive(k, x, y=1, b=None):
+    if b is None:
+        b = 1 / (2 * x)
     if k == 0:
-        return y_prev
-    b_k = b_prev - x**2
-    return calculate_recursive(k - 1, x, y_prev * b_k, b_k)
+        return y
+    b_k = b - x**2
+    return calculate_recursive(k - 1, x, y * b_k, b_k)
 
 
 def calculate_iterative(k, x):
