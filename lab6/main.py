@@ -69,7 +69,7 @@ class ApplianceApp(toga.App):
 
     def save_docx(self, widget):
         doc = Document()
-        doc.add_heading('Appliance Energy Consumption Report', 0)
+        doc.add_heading('Appliances Energy Consumption Report', 0)
         doc.add_paragraph(self.result_label.text)
         doc.save('report.docx')
 
@@ -77,12 +77,12 @@ class ApplianceApp(toga.App):
         wb = openpyxl.Workbook()
         ws = wb.active
         ws.title = 'Report'
-        ws['A1'] = 'Appliance Energy Consumption Report'
+        ws['A1'] = 'Appliances Energy Consumption Report'
         ws['A2'] = self.result_label.text
         wb.save('report.xlsx')
 
 def main():
-    return ApplianceApp('Appliance Energy Consumption', 'org.beeware.appliance')
+    return ApplianceApp('Appliances Energy Consumption', 'org.beeware.appliance')
 
 if __name__ == '__main__':
     main().main_loop()
