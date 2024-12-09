@@ -7,7 +7,7 @@
 
 ## Результаты вычислений
 
-![img.png](img\img.png)
+![img.png](img\img_1.png)
 
 
 
@@ -16,3 +16,4 @@
 1. [ChatGPT](https://chatgpt.com/)
 2. [Stack Overflow](https://stackoverflow.com/)
 3. [Рекурсивная функция в python](https://pythonru.com/osnovy/rekursiya-python)
+4. [Как работает рекурсия – объяснение в блок-схемах и видео - Хабр](https://habr.com/ru/articles/337030/)
