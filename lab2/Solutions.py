@@ -12,16 +12,16 @@ print(str(bin(4 ** 511 + 2 ** 511 - 511)).count("1"))
 
 # Третье задание
 def smallest_prime_factors(n):
-    spf = [i for i in range(n + 1)]
+    spf = list(range(n + 1))  # Изначально каждый элемент сам себе делитель
     for i in range(2, int(n ** 0.5) + 1):
-        if spf[i] == i:
+        if spf[i] == i:  # Если i — простое число
             for j in range(i * i, n + 1, i):
-                spf[j] = min(spf[j], i)
+                spf[j] = min(spf[j], i)  # Обновляем наименьший простой делитель
     return spf
 
 def calculate_M(N):
     spf = smallest_prime_factors(N)
-    factors = sorted(set(spf[N] for _ in range(5)))
+    factors = sorted({spf[N]})
     return factors
 
 results = [(N, calculate_M(N)) for N in range(200000002, 200000002 + 5)]
