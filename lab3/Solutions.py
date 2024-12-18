@@ -1,14 +1,32 @@
 # Первое задание
 def create_n_dim_array_recursive(n, size, level=1):
     if n == 1:
-        return [f"level {level}"] * size
+        return [f"level {level} "] * size
     return [create_n_dim_array_recursive(n-1, size, level+1) for _ in range(size)]
+
 
 def create_n_dim_array_iterative(n, size):
     array = [f"level {n}"] * size
-    for level in range(n-1, 0, -1):
-        array = [array.copy() for _ in range(size)]
-    return array
+    counter_dep = 0
+    counter_lev = 0
+    for level in range(n-2):
+        print("\t" * counter_dep, "[ ")
+        counter_dep += 1
+
+    for i in range(size if size - n < 0 else 1):
+        print("\t" * counter_dep, "[ ")
+        counter_dep += 1
+        for j in range(size):
+            print("\t" * counter_dep, end = "")
+    # print([array.copy() for _ in range(size)])
+            print(array)
+        counter_dep -= 1
+        print("\t" * counter_dep, "] ")
+    # print("]")
+    # print(array)
+    for level in range(n-2):
+        counter_dep -= 1
+        print("\t" * counter_dep, "] ")
 
 # Второе задание
 def calculate_recursive(k, x, y=1, b=None):
@@ -30,7 +48,7 @@ def calculate_iterative(k, x):
 
 
 print(create_n_dim_array_recursive(2, 3))
-print(create_n_dim_array_iterative(2, 3))
+create_n_dim_array_iterative(2, 4)
 
 x = 2  # Пример значения
 k = 5  # Число шагов
